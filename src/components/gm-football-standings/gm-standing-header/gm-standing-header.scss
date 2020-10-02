@@ -1,0 +1,29 @@
+:host {
+  display: table-row;
+  border-color: inherit;
+  vertical-align: middle;
+
+  th {
+    margin: 0;
+    padding: 0.5em 0;
+    width: 8%;
+    text-align: center;
+    color: var(--subheader-color, #fff);
+    background: var(--subheader-background, #3F51B5);    
+
+    &:first-of-type {
+      width: 30px;
+      text-align: left;
+    }
+
+    &:nth-child(3) {
+      width: auto;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .hide-cell {
+    display: none;
+  }
+}

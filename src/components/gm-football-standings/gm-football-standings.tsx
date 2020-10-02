@@ -1,6 +1,6 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, h, Prop, State } from '@stencil/core';
 import { getStandings } from '@services';
-import { StandingsRequest } from '@models';
+import { StandingsRequest, StandingsResponse } from '@models';
 
 @Component({
   tag: 'gm-football-standings',
@@ -11,58 +11,40 @@ export class GmFootballStandings {
   @Prop() competition: string;
   @Prop() season: number;
   @Prop() publicKey: string;
+  @State() standingsResponse: StandingsResponse;
 
-  async connectedCallback() {
+  async componentWillLoad() {
     const standingsRequest: StandingsRequest = {
       competition: this.competition,
       season: this.season,
       publicKey: this.publicKey
     };
   
-    const response = await getStandings(standingsRequest);
-    console.log(response);
+    this.standingsResponse = await getStandings(standingsRequest);
+    console.log(this.standingsResponse);
   }
 
   render() {
+    const { standings } = this.standingsResponse;
     return (
       <table>
-          <tr>
-            <th colSpan={2}>TEAMS</th>
-            <th>MP</th>
-            <th class="hide-cell">W</th>
-            <th class="hide-cell">D</th>
-            <th class="hide-cell">L</th>
-            <th class="hide-cell">GF</th>
-            <th>PTS</th>
-          </tr>
-    
-          <tr>
-            <td>1</td>
-            <td>
-              <img class="hide-cell" src="" />
-              Inter
-            </td>
-            <td>22</td>
-            <td class="hide-cell">22</td>
-            <td class="hide-cell">22</td>
-            <td class="hide-cell">22</td>
-            <td class="hide-cell">22</td>
-            <td>100</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>
-              <img class="hide-cell" src="" />
-              Inter
-            </td>
-            <td>22</td>
-            <td class="hide-cell">22</td>
-            <td class="hide-cell">22</td>
-            <td class="hide-cell">22</td>
-            <td class="hide-cell">22</td>
-            <td>100</td>
-          </tr>
-        </table>
+        <gm-standing-header />
+        {standings.map(standing => 
+          <gm-standing-row
+            position={standing.position}
+            name={standing.team.name}
+            imageUrl={standing.team.crestUrl}
+            playedGames={standing.playedGames}
+            won={standing.won}
+            draw={standing.draw}
+            lost={standing.lost}
+            goalsFor={standing.goalsFor}
+            goalsAgainst={standing.goalsAgainst}
+            goalDifference={standing.goalDifference}
+            points={standing.points}
+            />
+        )}
+      </table>
     );
   }
 }
