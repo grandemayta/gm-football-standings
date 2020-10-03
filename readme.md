@@ -1,4 +1,6 @@
 # Football Standings Widget
+[![Npm Version](https://img.shields.io/npm/v/gm-football-standings.svg)](https://www.npmjs.com/package/gm-football-standings)
+![Publish NPM](https://github.com/grandemayta/gm-football-standings/workflows/Publish%20NPM/badge.svg)
 [![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
 [![made-with-javascript-doc](https://img.shields.io/badge/Made%20with-Javascript-1f425f.svg)](https://www.sphinx-doc.org/)
 
@@ -32,30 +34,19 @@ To use our widget you need to enable a public key from [football-data](https://w
 
 ## Integration
 
-## Npm Package
+## NPM
 ```sh
-npm i gm-football-standings
+npm i --save gm-football-standings
 ```
 
 ## CDN
 ```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <style>
-      .theme-red {
-        --header-background: #D32F2F;
-        --subheader-background: #F44336;
-      }
-    </style>
-</head>
 <body>
-    <gm-football-standings class="theme-red" competition="SA" season="2019" key="public-key-here">
+    <gm-football-standings competition="SA" season="2019" key="public-key-here">
     </gm-football-standings>
-    <script type="module" src="https://unpkg.com/gm-football-standings@0.0.2/dist/gm-football-standings/gm-football-standings.esm.js"></script>
-    <script nomodule src="https://unpkg.com/gm-football-standings@0.0.2/dist/gm-football-standings/gm-football-standings.js"></script>
+    
+    <script type="module" src="https://unpkg.com/gm-football-standings/dist/gm-football-standings/gm-football-standings.esm.js"></script>
 </body>
-</html>
 ```
 
 ## Browsers support
