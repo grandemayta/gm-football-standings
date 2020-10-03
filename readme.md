@@ -8,7 +8,7 @@ Football Standings Widget shows the standings of the most important football lea
 You can integrate this widget in your Web Application using NPM or using the CDN. The widget works with Angular, React and others modern frontend Frameworks or libraries.
 The widget was created using Mobile first approach and is also customizable.
 
-**Work in progress**
+**THE PROJECT IS CURRENTLY WORK IN PROGRESS**
 
 ## Summary
 - [Getting started](#getting-started)
