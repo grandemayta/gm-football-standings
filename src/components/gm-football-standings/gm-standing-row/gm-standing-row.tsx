@@ -22,7 +22,7 @@ export class GmStandingRow {
     return (
       <Host>
         <td>{this.position}</td>
-        <td>
+        <td class="logo-team-name">
           <img src={this.imageUrl} />
           <span>{this.name}</span>
         </td>

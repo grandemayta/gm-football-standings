@@ -11,7 +11,7 @@ export class GmStandingHeader {
     return (
       <Host>
         <th></th>
-        <th>Squadre</th>
+        <th class="logo-team-name">Squadre</th>
         <th class="hide-mobile show-tablet">G</th>
         <th class="hide-mobile">V</th>
         <th class="hide-mobile">N</th>
