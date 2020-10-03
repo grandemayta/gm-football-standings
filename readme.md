@@ -57,7 +57,7 @@ To use our widget you need to enable a public key from [football-data](https://w
 <br/>
 :white_check_mark: Safari
 <br/>
-:white_check_mark: Edge New Version
+:white_check_mark: Edge (New Version)
 
 ## Tech stack:
 - WebComponents
