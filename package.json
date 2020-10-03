@@ -1,6 +1,13 @@
 {
   "name": "gm-football-standings",
   "version": "0.0.1",
+  "author": {
+    "name": "Gabriel Mayta",
+    "email": "grandemayta@gmail.com",
+    "url": "https://github.com/grandemayta"
+  },
+  "description": "Football Standings Widget shows the standings of the most important football leagues. You can integrate this widget in your Web Application using NPM or using the CDN. The widget works with Angular, React and others modern frontend Frameworks or libraries. The widget was creates using Mobile first apporach and is also customizable.",
+  "keywords": ["webcomponent", "stenciljs", "css variables"],
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
   "es2015": "dist/esm/index.mjs",
@@ -23,8 +30,11 @@
   "dependencies": {
     "@stencil/core": "^2.0.1"
   },
-  "license": "MIT",
   "devDependencies": {
     "@stencil/sass": "^1.3.2"
-  }
+  },
+  "repository": {
+    "url": "https://github.com/grandemayta/gm-football-standings"
+  },
+  "license": "MIT"
 }
