@@ -12,13 +12,13 @@ export class GmStandingHeader {
       <Host>
         <th></th>
         <th>Squadre</th>
-        <th>G</th>
-        <th class="hide-cell">V</th>
-        <th class="hide-cell">N</th>
-        <th class="hide-cell">P</th>
-        <th class="hide-cell">GF</th>
-        <th class="hide-cell">GS</th>
-        <th class="hide-cell">+/-</th>
+        <th class="hide-mobile show-tablet">G</th>
+        <th class="hide-mobile">V</th>
+        <th class="hide-mobile">N</th>
+        <th class="hide-mobile">P</th>
+        <th class="hide-mobile">GF</th>
+        <th class="hide-mobile">GS</th>
+        <th class="hide-mobile">+/-</th>
         <th>PTI</th>
       </Host>
     );

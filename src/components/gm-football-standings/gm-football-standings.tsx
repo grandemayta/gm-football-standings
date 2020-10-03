@@ -1,6 +1,6 @@
-import { Component, h, Prop, State } from '@stencil/core';
+import { Component, h, Prop, State, Host, Listen} from '@stencil/core';
 import { getStandings } from '@services';
-import { StandingsRequest, StandingsResponse } from '@models';
+import { StandingsRequest, StandingsResponse, Standing } from '@models';
 
 @Component({
   tag: 'gm-football-standings',
@@ -12,6 +12,13 @@ export class GmFootballStandings {
   @Prop() season: number;
   @Prop() publicKey: string;
   @State() standingsResponse: StandingsResponse;
+  @State() currentStanding: Array<Standing>;
+
+  @Listen('switchPanel')
+  switchPanelHandler(event: CustomEvent<string>) {
+    const type = event.detail;
+    this.currentStanding = this.standingsResponse.standings[type];
+  }
 
   async componentWillLoad() {
     const standingsRequest: StandingsRequest = {
@@ -21,30 +28,32 @@ export class GmFootballStandings {
     };
   
     this.standingsResponse = await getStandings(standingsRequest);
-    console.log(this.standingsResponse);
+    this.currentStanding = this.standingsResponse.standings.total;
   }
 
   render() {
-    const { standings } = this.standingsResponse;
     return (
-      <table>
-        <gm-standing-header />
-        {standings.map(standing => 
-          <gm-standing-row
-            position={standing.position}
-            name={standing.team.name}
-            imageUrl={standing.team.crestUrl}
-            playedGames={standing.playedGames}
-            won={standing.won}
-            draw={standing.draw}
-            lost={standing.lost}
-            goalsFor={standing.goalsFor}
-            goalsAgainst={standing.goalsAgainst}
-            goalDifference={standing.goalDifference}
-            points={standing.points}
-            />
-        )}
-      </table>
+      <Host>
+        <gm-standing-panel />
+        <table>
+          <gm-standing-header />
+          {this.currentStanding.map(standing => 
+            <gm-standing-row
+              position={standing.position}
+              name={standing.team.name}
+              imageUrl={standing.team.crestUrl}
+              playedGames={standing.playedGames}
+              won={standing.won}
+              draw={standing.draw}
+              lost={standing.lost}
+              goalsFor={standing.goalsFor}
+              goalsAgainst={standing.goalsAgainst}
+              goalDifference={standing.goalDifference}
+              points={standing.points}
+              />
+          )}
+        </table>
+      </Host>
     );
   }
 }

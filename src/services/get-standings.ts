@@ -9,5 +9,12 @@ export const getStandings = async (standingsRequest: StandingsRequest): Promise<
   const response = await fetch(`${baseUrl}/${standingsEndpoint}`, { headers });
   const data = await response.json();
 
-  return { competition: data.competition, standings: data.standings[0].table };
+  return {
+    competition: data.competition,
+    standings: {
+      total: data.standings.find(standing => standing.type === 'TOTAL').table,
+      away: data.standings.find(standing => standing.type === 'AWAY').table,
+      home: data.standings.find(standing => standing.type === 'HOME').table
+    }
+  };
 };

@@ -26,13 +26,13 @@ export class GmStandingRow {
           <img src={this.imageUrl} />
           <span>{this.name}</span>
         </td>
-        <td>{this.playedGames}</td>
-        <td class="hide-cell">{this.won}</td>
-        <td class="hide-cell">{this.draw}</td>
-        <td class="hide-cell">{this.lost}</td>
-        <td class="hide-cell">{this.goalsFor}</td>
-        <td class="hide-cell">{this.goalsAgainst}</td>
-        <td class="hide-cell">{this.goalDifference}</td>
+        <td class="hide-mobile show-tablet">{this.playedGames}</td>
+        <td class="hide-mobile">{this.won}</td>
+        <td class="hide-mobile">{this.draw}</td>
+        <td class="hide-mobile">{this.lost}</td>
+        <td class="hide-mobile">{this.goalsFor}</td>
+        <td class="hide-mobile">{this.goalsAgainst}</td>
+        <td class="hide-mobile">{this.goalDifference}</td>
         <td>{this.points}</td>
       </Host>
     );

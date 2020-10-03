@@ -13,6 +13,8 @@ export namespace Components {
     }
     interface GmStandingHeader {
     }
+    interface GmStandingPanel {
+    }
     interface GmStandingRow {
         "draw": number;
         "goalDifference": number;
@@ -40,6 +42,12 @@ declare global {
         prototype: HTMLGmStandingHeaderElement;
         new (): HTMLGmStandingHeaderElement;
     };
+    interface HTMLGmStandingPanelElement extends Components.GmStandingPanel, HTMLStencilElement {
+    }
+    var HTMLGmStandingPanelElement: {
+        prototype: HTMLGmStandingPanelElement;
+        new (): HTMLGmStandingPanelElement;
+    };
     interface HTMLGmStandingRowElement extends Components.GmStandingRow, HTMLStencilElement {
     }
     var HTMLGmStandingRowElement: {
@@ -49,6 +57,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "gm-football-standings": HTMLGmFootballStandingsElement;
         "gm-standing-header": HTMLGmStandingHeaderElement;
+        "gm-standing-panel": HTMLGmStandingPanelElement;
         "gm-standing-row": HTMLGmStandingRowElement;
     }
 }
@@ -59,6 +68,9 @@ declare namespace LocalJSX {
         "season"?: number;
     }
     interface GmStandingHeader {
+    }
+    interface GmStandingPanel {
+        "onSwitchPanel"?: (event: CustomEvent<string>) => void;
     }
     interface GmStandingRow {
         "draw"?: number;
@@ -76,6 +88,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "gm-football-standings": GmFootballStandings;
         "gm-standing-header": GmStandingHeader;
+        "gm-standing-panel": GmStandingPanel;
         "gm-standing-row": GmStandingRow;
     }
 }
@@ -85,6 +98,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "gm-football-standings": LocalJSX.GmFootballStandings & JSXBase.HTMLAttributes<HTMLGmFootballStandingsElement>;
             "gm-standing-header": LocalJSX.GmStandingHeader & JSXBase.HTMLAttributes<HTMLGmStandingHeaderElement>;
+            "gm-standing-panel": LocalJSX.GmStandingPanel & JSXBase.HTMLAttributes<HTMLGmStandingPanelElement>;
             "gm-standing-row": LocalJSX.GmStandingRow & JSXBase.HTMLAttributes<HTMLGmStandingRowElement>;
         }
     }

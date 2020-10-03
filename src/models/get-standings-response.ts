@@ -1,6 +1,16 @@
 export interface StandingsResponse {
   competition: Competition;
-  standings: Array<Standing>;
+  standings: {
+    total: Array<Standing>;
+    home: Array<Standing>;
+    away: Array<Standing>;
+  }
+}
+
+export enum StandingType {
+  TOTAL = 'total',
+  HOME = 'home',
+  AWAY = 'away'
 }
 
 export interface Competition {

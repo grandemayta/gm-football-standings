@@ -1,3 +1,5 @@
+@import '../../../styles';
+
 :host {
   display: table-row;
   border-color: inherit;
@@ -6,10 +8,15 @@
   th {
     margin: 0;
     padding: 0.5em 0;
-    width: 8%;
+    width: 12%;
     text-align: center;
-    color: var(--subheader-color, #fff);
-    background: var(--subheader-background, #3F51B5);    
+    text-transform: uppercase;
+    color: var(--subheader-color, #757575);
+    background: var(--subheader-background, #fff);
+
+    &.hide-mobile {
+      display: none;
+    }
 
     &:first-of-type {
       width: 30px;
@@ -18,12 +25,21 @@
 
     &:nth-child(3) {
       width: auto;
+      text-align: left;
     }
-  }
-}
 
-@media screen and (max-width: 900px) {
-  .hide-cell {
-    display: none;
+    @media (min-width: $breakpoint-tablet) {
+      width: 10%;
+      &.show-tablet {
+        display: table-cell;
+      }
+    }
+  
+    @media (min-width: $breakpoint-desktop) {
+      width: 8%;
+      &.hide-mobile {
+        display: table-cell;
+      }
+    }
   }
 }

@@ -1,0 +1,44 @@
+@import '../../../styles';
+
+:host {
+  display: none;
+
+  button {
+    width: 180px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #d0d0d0;
+    background-color: #fff;
+    border: none;
+    border-bottom: 1px solid #d0d0d0;
+
+    &:focus {
+      outline:0;
+    }
+
+    &.active {
+      color: #000;
+      border-bottom: 1px solid #000;
+    }
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 0;
+
+    button {
+      width: 100%;
+    }
+  }
+  
+  @media (min-width: $breakpoint-desktop) {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+
+    button {
+      width: 180px;
+    }
+  }
+}
