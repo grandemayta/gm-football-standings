@@ -18,12 +18,14 @@
 
 ### Depends on
 
+- [gm-standing-panel](gm-standing-panel)
 - [gm-standing-header](gm-standing-header)
 - [gm-standing-row](gm-standing-row)
 
 ### Graph
 ```mermaid
 graph TD;
+  gm-football-standings --> gm-standing-panel
   gm-football-standings --> gm-standing-header
   gm-football-standings --> gm-standing-row
   style gm-football-standings fill:#f9f,stroke:#333,stroke-width:4px

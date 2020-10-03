@@ -31,6 +31,13 @@ To use our widget you need to enable a public key from [football-data](https://w
 | DED | Eredivise |
 
 ## Integration
+
+## Npm Package
+```sh
+npm i gm-football-standings
+```
+
+## CDN
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +52,8 @@ To use our widget you need to enable a public key from [football-data](https://w
 <body>
     <gm-football-standings class="theme-red" competition="SA" season="2019" key="public-key-here">
     </gm-football-standings>
-    <script src="standing-football/bundle.js"></script>
+    <script type="module" src="https://unpkg.com/gm-football-standings@0.0.2/dist/gm-football-standings/gm-football-standings.esm.js"></script>
+    <script nomodule src="https://unpkg.com/gm-football-standings@0.0.2/dist/gm-football-standings/gm-football-standings.js"></script>
 </body>
 </html>
 ```
