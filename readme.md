@@ -79,7 +79,6 @@ defineCustomElements();
 ```javascript
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 
 import { defineCustomElements } from 'gm-football-standings/loader';
 
