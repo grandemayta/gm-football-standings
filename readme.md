@@ -39,6 +39,59 @@ To use our widget you need to enable a public key from [football-data](https://w
 npm i --save gm-football-standings
 ```
 
+### Angular
+```javascript
+// APP.MODULE.TS
+import { BrowserModule } from '@angular/platform-browser';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule],
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+})
+export class AppModule {}
+
+// MAIN.TS
+import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
+
+import { defineCustomElements } from 'gm-football-standings/loader';
+
+if (environment.production) {
+  enableProdMode();
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.log(err));
+defineCustomElements();
+
+// APP.COMPONENT.HTML
+<gm-football-standings competition="SA" season="2019" key="public-key-here"></gm-football-standings>
+```
+
+### React
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import { defineCustomElements } from 'gm-football-standings/loader';
+
+ReactDOM.render(
+    <div>
+      <gm-football-standings competition="SA" season="2019" key="public-key-here">
+      </gm-football-standings>
+    </div>,
+    document.getElementById('root'));
+
+defineCustomElements();
+```
+
 ## CDN
 ```html
 <body>
