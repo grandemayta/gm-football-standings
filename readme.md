@@ -4,7 +4,7 @@
 [![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
 [![made-with-javascript-doc](https://img.shields.io/badge/Made%20with-Javascript-1f425f.svg)](https://www.sphinx-doc.org/)
 
-<img src="https://user-images.githubusercontent.com/6887120/94998705-30729580-05b4-11eb-8957-12b44d915fa5.png" />
+<img src="./94998705-30729580-05b4-11eb-8957-12b44d915fa5.png" />
 
 Football Standings Widget shows the standings of the most important football leagues.
 You can integrate this widget in your Web Application using NPM or using the CDN. The widget works with Angular, React and others modern frontend Frameworks or libraries.
